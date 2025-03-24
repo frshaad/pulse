@@ -15,11 +15,15 @@ const compat = new FlatCompat({
 })
 
 export default tseslint.config([
-  { ignores: ['node_modules'], languageOptions: { globals: { React: true } } },
+  {
+    ignores: ['node_modules'],
+    languageOptions: { globals: { React: true } },
+  },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   js.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   {
+    ignores: ['**/.lintstagedrc.mjs'],
     languageOptions: {
       parserOptions: {
         projectService: true,
